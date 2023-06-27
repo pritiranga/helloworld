@@ -1,4 +1,4 @@
-# Base image with JDK and Maven
+# Stage 1: Build stage
 FROM maven:3.8.3-openjdk-11-slim AS build
 
 # Set the working directory in the container
@@ -15,9 +15,6 @@ COPY src ./src
 
 # Build the application
 RUN mvn clean package
-
-# Create a new image with a smaller base image
-FROM adoptopenjdk:11-jre-hotspot
 
 # Set the working directory in the container
 WORKDIR /app
