@@ -14,7 +14,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 
 # Build the application
-RUN mvn package -DskipTests
+RUN mvn clean package
 
 # Create a new image with a smaller base image
 FROM adoptopenjdk:11-jre-hotspot
