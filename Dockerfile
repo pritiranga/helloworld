@@ -23,7 +23,7 @@ FROM adoptopenjdk:11-jre-hotspot
 WORKDIR /app
 
 # Copy the built JAR file from the previous stage to the container
-COPY --from=build /app/target/maven-web-application.jar ./app.jar
+COPY --from=build /app/target/helloworld-1.1.jar ./app.jar
 
 # Set the command to run your application
 CMD ["java", "-jar", "app.jar"]
